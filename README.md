@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/node-rate-counter.svg)](https://badge.fury.io/js/node-rate-counter)
 [![npm](https://img.shields.io/npm/dm/node-rate-counter.svg)]()
 
-It is simple to use but would be easier to store the query string and convert it back to the json format from the string.
+Calculate the incomming rate of anything.
 
 # Installation
 ``` bash

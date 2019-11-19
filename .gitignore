@@ -1,0 +1,9 @@
+# Created by https://www.gitignore.io/api/visualstudiocode
+# Edit at https://www.gitignore.io/?templates=visualstudiocode
+
+### VisualStudioCode ###
+.vscode
+**/node_modules
+
+**/package-lock.json
+# End of https://www.gitignore.io/api/visualstudiocode

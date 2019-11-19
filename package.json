@@ -1,0 +1,32 @@
+{
+  "name": "node-rate-counter",
+  "version": "1.0.0",
+  "description": "calculate the a rate given over any interval with a retention period.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests",
+    "lint": "eslint --ext .js ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gigaclank/node-rate-counter.git"
+  },
+  "keywords": [
+    "node",
+    "rate",
+    "counter"
+  ],
+  "author": "Aaron Lynn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gigaclank/node-rate-counter/issues"
+  },
+  "homepage": "https://github.com/Gigaclank/node-rate-counter#readme",
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "mocha": "^6.2.2",
+    "sinon": "^7.5.0"
+  }
+}

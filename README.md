@@ -11,13 +11,20 @@ npm install node-rate-counter
 ```
 # Usage
 ``` js
-let counter = new rateCounter(120000)//120 seconds retention period
+let counter = new rateCounter()
 
 setInterval(() => {
     counter.increment()
+    rateCounter.clean_up(120000)//hold the last 120 seconds worth of data 
     console.log(counter.rate)
-}, 100)
+}, 100) //increment counter every 100ms (i.e rate of 10/s)
+
+
 ```
+
+# N.B.
+This module has a margin of error when using node js timers due to the nature of of node js. See this **[link](https://johnresig.com/blog/accuracy-of-javascript-time/)** for more detail
+
 ---
 <p align="center" z-index = "-1">
   <img src="https://avatars2.githubusercontent.com/u/12459794?s=200&v=4"/>

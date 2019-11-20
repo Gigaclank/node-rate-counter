@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha tests",
+    "example": "node examples/example.js",
     "lint": "eslint --ext .js ."
   },
   "repository": {

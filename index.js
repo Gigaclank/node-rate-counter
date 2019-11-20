@@ -1,15 +1,13 @@
 module.exports = class rateCounter {
-    constructor(maxInterval) { //i.e 1000ms
+    constructor() { //i.e 1000ms
         this.reqTimes = []
-        this.maxInterval = maxInterval
     }
     increment() {
         let now = new Date()
-        // this.reqTimes = this.reqTimes.filter(i => (now.getTime() - i.getTime()) < this.maxInterval)
-        this.reqTimes.push(new Date())
-        // console.log(this.reqTimes)
-
+        // console.log(now.getTime())
+        this.reqTimes.push(now)
     }
+    // get some basic rates through a property read
     get rate() {
         return {
             '1s': this.calculate_rate(1000),
@@ -18,11 +16,23 @@ module.exports = class rateCounter {
             '60s': this.calculate_rate(60000),
         }
     }
+    //clean up the array to avoid overflow and memory leaks
+    clean_up(maxInterval) {
+        let now = new Date()
+        this.reqTimes = this.reqTimes.filter(i => (now.getTime() - i.getTime()) < maxInterval)
+    }
 
+    // calculate custom interval rate
     calculate_rate(interval) {
         let now = new Date()
-        let count = this.reqTimes.filter(i => (now.getTime() - i.getTime()) < interval)
+        let count = this.reqTimes.filter(i => {
+            return (now.getTime() - i.getTime()) < interval
+        })
         return count.length
+    }
+    //get raw total count of reqTimes
+    get count() {
+        return this.reqTimes.length
     }
 }
 
